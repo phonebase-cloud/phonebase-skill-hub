@@ -12,11 +12,11 @@ category: social
 
 ## 命令
 
-### 基础三件套
+### 基础三件套（通用生命周期）
 
-- `pb tiktok open` — 启动 TikTok（纯启动，秒回，不带 introspection）
-- `pb tiktok state` — 查询当前页面状态（dump + 解析 + 登录态判断）
-- `pb tiktok close` — 强制停止 TikTok
+- `pb tiktok open` — 启动 TikTok
+- `pb tiktok close` — 强制停止
+- `pb tiktok clear` — 清数据
 
 ### 业务命令
 
@@ -32,9 +32,6 @@ category: social
 ```json
 // pb tiktok open
 {"code":200,"data":{"top_activity":{"package_name":"com.zhiliaoapp.musically","class_name":"..."},"foreground":true},"msg":"OK"}
-
-// pb tiktok state  (未登录)
-{"code":200,"data":{"top_activity":{...},"foreground":true,"logged_in":false,"visible_texts":["Log in","Sign up","Continue with Google",...]},"msg":"OK"}
 
 // pb tiktok search --keyword apple  (未登录)
 {"code":200,"data":{"keyword":"apple","logged_in":false,"candidates":[]},"msg":"OK"}

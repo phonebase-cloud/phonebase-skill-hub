@@ -14,17 +14,17 @@ requires:
 
 ## 命令
 
-### 基础三件套
+### 基础三件套（通用生命周期）
 
-- `pb googleplay open` — 启动 Play Store（纯启动）
-- `pb googleplay state` — 查询当前页面状态（dump + 解析 + 登录账号）
+- `pb googleplay open` — 启动 Play Store
 - `pb googleplay close` — 强制停止
+- `pb googleplay clear` — 清数据
 
 ### 发现 / 导航
 
 - `pb googleplay search --keyword <word>` — 搜索 App（`market://search` deeplink）
 - `pb googleplay detail --package <pkg>` — 打开 App 详情页（`market://details` deeplink）
-- `pb googleplay my_apps` — 打开「管理应用和设备」主页
+- `pb googleplay my-apps` — 打开「管理应用和设备」主页
 - `pb googleplay updates` — 进更新页并启发式抽出待更新 App 名
 
 ### 安装 / 卸载 / 更新
@@ -62,9 +62,6 @@ Google Play 的 UI 混淆严重、版本差异大，直接模拟点击搜索框/
 样例：
 
 ```json
-// pb googleplay state  (已登录)
-{"code":200,"data":{"top_activity":{...},"foreground":true,"logged_in":true,"account":"a74636sty@gmail.com","visible_texts":["Apps","Games",...]},"msg":"OK"}
-
 // pb googleplay install --package com.whatsapp  (没账号)
 {"code":200,"data":{"package":"com.whatsapp","installed":false,"logged_in":false},"msg":"OK"}
 

@@ -16,10 +16,10 @@ async function main() {
 
   const top = await pb.topActivity();
   if (!isForeground(top)) {
-    fail(new Error(`跳转后前台是 ${top.package_name}`), 'my_apps');
+    fail(new Error(`跳转后前台是 ${top.package_name}`), 'my-apps');
     return;
   }
   finish({ top_activity: top });
 }
 
-main().catch((err) => fail(err, 'my_apps'));
+main().catch((err) => fail(err, 'my-apps'));

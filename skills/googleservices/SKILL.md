@@ -21,8 +21,7 @@ pb googleplay install --package org.telegram.messenger   # 直接能用
 
 ### 账号查询
 
-- `pb googleservices accounts` — 列出设备上所有 `com.google` 账号
-- `pb googleservices status` — 高层登录态：已登录账号数 / 默认账号 / 账号列表
+- `pb googleservices accounts` — 列出设备上所有 `com.google` 账号（含登录态、默认账号）
 
 ### 账号管理
 
@@ -61,9 +60,6 @@ Google 的登录页是 `MinuteMaidActivity` 里的 WebView，**不是原生 Andr
 {"code":200,"data":{"accounts":[],"count":0},"msg":"OK"}
 
 // pb googleservices accounts  (有账号)
-{"code":200,"data":{"accounts":[{"name":"a74636sty@gmail.com","type":"com.google"}],"count":1},"msg":"OK"}
-
-// pb googleservices status
 {"code":200,"data":{"logged_in":true,"count":1,"default_account":"a74636sty@gmail.com","accounts":[{"name":"a74636sty@gmail.com","type":"com.google"}]},"msg":"OK"}
 
 // pb googleservices login --email X --password Y  (成功)

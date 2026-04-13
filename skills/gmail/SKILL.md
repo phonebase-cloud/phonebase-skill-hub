@@ -1,10 +1,10 @@
 ---
+version: 1
 name: gmail
 display_name: Gmail
 description: Gmail 自动化 — 启动、收件箱、写邮件、搜索、阅读
 package: com.google.android.gm
 category: email
-version: 3
 requires:
   - googleservices
 ---
@@ -15,11 +15,11 @@ requires:
 
 ## 命令
 
-### 基础三件套
+### 基础三件套（通用生命周期）
 
-- `pb gmail open` — 启动 Gmail（纯启动）
-- `pb gmail state` — 查询当前页面状态（dump + 解析 + 登录账号）
-- `pb gmail close` — 强制停止 Gmail
+- `pb gmail open` — 启动 Gmail
+- `pb gmail close` — 强制停止
+- `pb gmail clear` — 清数据和缓存
 
 ### 邮件操作
 
@@ -61,9 +61,6 @@ Account and settings.
 样例：
 
 ```json
-// pb gmail state  (已登录)
-{"code":200,"data":{"top_activity":{...},"foreground":true,"logged_in":true,"account":"biuboomxx@gmail.com"},"msg":"OK"}
-
 // pb gmail inbox --limit 5
 {"code":200,"data":{"logged_in":true,"account":"...","items":[{"index":0,"sender":"...","subject":"...","snippet":"...","date":"...","unread":true}],"count":5},"msg":"OK"}
 
