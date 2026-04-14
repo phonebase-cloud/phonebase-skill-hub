@@ -51,7 +51,7 @@ Google 的登录页是 `MinuteMaidActivity` 里的 WebView，**不是原生 Andr
 
 ## 输出规范
 
-每个命令的 stdout 是**业务数据本身**，pb 自动包成 `{code, data, msg}` 信封。**不要**在数据里加 `status` 字段。详见仓库的 `docs/SKILL_AUTHORING.md`。
+每个命令的 stdout 是**业务数据本身**，pb 自动包成 `{code, data, msg}` 信封。**不要**在数据里加 `status` 字段。
 
 样例：
 

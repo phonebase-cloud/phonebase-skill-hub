@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-14T13:49:47.047Z",
+  "total": 4,
+  "skills": [
+    {
+      "id": "gmail",
+      "display_name": "Gmail",
+      "description": "Gmail 自动化 — 启动、收件箱、写邮件、搜索、阅读",
+      "version": "1",
+      "author": null,
+      "category": "email",
+      "package": "com.google.android.gm",
+      "bundle_id": null,
+      "tags": [],
+      "requires": [
+        "googleservices"
+      ],
+      "commands": {
+        "close": {
+          "description": "强制停止 Gmail",
+          "args": []
+        },
+        "compose": {
+          "description": "写邮件 —— 用 mailto deeplink 预填 to/subject/body，可选自动点发送",
+          "args": [
+            {
+              "name": "to",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "收件人邮箱"
+            },
+            {
+              "name": "subject",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "主题"
+            },
+            {
+              "name": "body",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "正文"
+            },
+            {
+              "name": "send",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "传 \"true\" 时自动点 Send；默认只打开草稿页"
+            }
+          ]
+        },
+        "inbox": {
+          "description": "列出收件箱当前可见的邮件（发件人、主题、预览、时间）",
+          "args": [
+            {
+              "name": "limit",
+              "type": "int",
+              "required": false,
+              "default": "20",
+              "description": "最多返回几条"
+            }
+          ]
+        },
+        "open": {
+          "description": "启动 Gmail（纯启动）",
+          "args": []
+        },
+        "read": {
+          "description": "打开指定邮件：按 index（从 0 开始）或按 subject 关键词匹配",
+          "args": [
+            {
+              "name": "index",
+              "type": "int",
+              "required": false,
+              "default": null,
+              "description": "列表中第几条邮件（从 0 开始）"
+            },
+            {
+              "name": "subject",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "按主题关键词（不区分大小写）匹配第一封"
+            }
+          ]
+        },
+        "search": {
+          "description": "在 Gmail 里搜索邮件（点搜索框 → 清空旧值 → 输入关键词 → Enter）",
+          "args": [
+            {
+              "name": "keyword",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "搜索关键词"
+            },
+            {
+              "name": "limit",
+              "type": "int",
+              "required": false,
+              "default": "20",
+              "description": "最多返回几条结果"
+            }
+          ]
+        }
+      },
+      "icon": "webp"
+    },
+    {
+      "id": "googleplay",
+      "display_name": "Google Play Store",
+      "description": "Google Play Store 自动化 — 启动、搜索、详情、安装/卸载/更新、应用管理",
+      "version": null,
+      "author": null,
+      "category": "tools",
+      "package": "com.android.vending",
+      "bundle_id": null,
+      "tags": [],
+      "requires": [
+        "googleservices"
+      ],
+      "commands": {
+        "close": {
+          "description": "强制停止 Google Play Store",
+          "args": []
+        },
+        "detail": {
+          "description": "直接打开指定 App 的 Google Play 详情页（market://details deeplink）",
+          "args": [
+            {
+              "name": "package",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "App 包名，例如 com.zhiliaoapp.musically"
+            }
+          ]
+        },
+        "install": {
+          "description": "通过 Play Store 安装一个 App：打开详情页 → 点 Install → 等待完成（需要登录）",
+          "args": [
+            {
+              "name": "package",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "目标 App 包名"
+            },
+            {
+              "name": "wait",
+              "type": "int",
+              "required": false,
+              "default": "60",
+              "description": "最长等待多少秒直到安装完成（出现 Open 按钮或系统能解析出该包）"
+            }
+          ]
+        },
+        "my-apps": {
+          "description": "打开 Play Store 的「管理应用和设备」主页",
+          "args": []
+        },
+        "open": {
+          "description": "启动 Google Play Store（纯启动）",
+          "args": []
+        },
+        "search": {
+          "description": "用 market://search deeplink 在 Play Store 里搜索 App",
+          "args": [
+            {
+              "name": "keyword",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "搜索关键词"
+            }
+          ]
+        },
+        "uninstall": {
+          "description": "通过 Play Store 卸载一个 App：打开详情页 → 点 Uninstall → 确认",
+          "args": [
+            {
+              "name": "package",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "目标 App 包名"
+            },
+            {
+              "name": "wait",
+              "type": "int",
+              "required": false,
+              "default": "30",
+              "description": "最长等待多少秒直到系统识别该包已卸载"
+            }
+          ]
+        },
+        "update": {
+          "description": "更新指定 App：打开详情页，如果有 Update 按钮就点，否则返回 up_to_date: true",
+          "args": [
+            {
+              "name": "package",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "目标 App 包名"
+            },
+            {
+              "name": "wait",
+              "type": "int",
+              "required": false,
+              "default": "90",
+              "description": "最长等待多少秒直到更新完成"
+            }
+          ]
+        },
+        "updates": {
+          "description": "打开「管理应用和设备 → 可用更新」页，启发式抽出待更新 App 名",
+          "args": []
+        }
+      },
+      "icon": "webp"
+    },
+    {
+      "id": "googleservices",
+      "display_name": "Google Play services",
+      "description": "Google 账号管理 — 登录 / 登出 / 账号查询；所有 Google 系应用共享",
+      "version": null,
+      "author": null,
+      "category": "system",
+      "package": "com.google.android.gms",
+      "bundle_id": null,
+      "tags": [],
+      "requires": [],
+      "commands": {
+        "accounts": {
+          "description": "列出设备上所有 com.google 账号,含登录态 / 默认账号等高层字段",
+          "args": []
+        },
+        "login": {
+          "description": "触发系统 ADD_ACCOUNT_SETTINGS 流程添加 Google 账号；可选 best-effort 凭证填充",
+          "args": [
+            {
+              "name": "email",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "要登录的邮箱（不传则只打开页面让人工完成）"
+            },
+            {
+              "name": "password",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "密码（与 --email 配合）"
+            },
+            {
+              "name": "wait",
+              "type": "int",
+              "required": false,
+              "default": "120",
+              "description": "登录页打开后多少秒内轮询 dumpsys account 直到检测到新账号"
+            }
+          ]
+        },
+        "logout": {
+          "description": "移除指定 Google 账号；不带 --email 时只打开账号设置页",
+          "args": [
+            {
+              "name": "email",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "要移除的 Google 账号邮箱（不传只打开设置页）"
+            },
+            {
+              "name": "wait",
+              "type": "int",
+              "required": false,
+              "default": "15",
+              "description": "点 Remove account 后多少秒内轮询 dumpsys account 确认账号被移除"
+            }
+          ]
+        }
+      },
+      "icon": "webp"
+    },
+    {
+      "id": "tiktok",
+      "display_name": "TikTok",
+      "description": "TikTok 自动化 — 启动、状态检测、搜索、关闭",
+      "version": null,
+      "author": null,
+      "category": "social",
+      "package": "com.zhiliaoapp.musically",
+      "bundle_id": null,
+      "tags": [],
+      "requires": [],
+      "commands": {
+        "close": {
+          "description": "强制停止 TikTok",
+          "args": []
+        },
+        "open": {
+          "description": "启动 TikTok（纯启动；自动关掉 Google Sign-In 抢前台弹窗）",
+          "args": []
+        },
+        "search": {
+          "description": "在 TikTok 内搜索关键词",
+          "args": [
+            {
+              "name": "keyword",
+              "type": "string",
+              "required": true,
+              "default": null,
+              "description": "搜索关键词"
+            }
+          ]
+        }
+      },
+      "icon": "webp"
+    }
+  ]
+}

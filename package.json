@@ -1,0 +1,13 @@
+{
+  "name": "phonebase-skill-hub",
+  "version": "0.0.1",
+  "private": true,
+  "description": "PhoneBase Skill Hub — app skills collection",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -64,8 +64,9 @@ pb skills new instagram --package com.instagram.android
 mkdir -p ~/.phonebase/skills/myskill/scripts
 ```
 
-完整写作指南：[docs/SKILL_AUTHORING.md](docs/SKILL_AUTHORING.md)
-SDK API 速查：[docs/SDK_API.md](docs/SDK_API.md)
+写作指南：[docs.phonebase.cloud/zh/skills/create-skill](https://docs.phonebase.cloud/zh/skills/create-skill)
+
+让 AI 帮你写 —— 安装 [`phonebase-skill-creator`](https://github.com/phonebase-cloud/phonebase-skills/tree/master/skills/phonebase-skill-creator) agent skill。
 
 ## 贡献
 

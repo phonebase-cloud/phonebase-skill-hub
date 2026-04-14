@@ -64,7 +64,9 @@ pb skills new instagram --package com.instagram.android
 mkdir -p ~/.phonebase/skills/myskill/scripts
 ```
 
-See [docs/SKILL_AUTHORING.md](docs/SKILL_AUTHORING.md) for the full authoring guide, and [docs/SDK_API.md](docs/SDK_API.md) for the SDK reference.
+Authoring guide: [docs.phonebase.cloud/en/skills/create-skill](https://docs.phonebase.cloud/en/skills/create-skill)
+
+Let AI write skills for you — install the [`phonebase-skill-creator`](https://github.com/phonebase-cloud/phonebase-skills/tree/master/skills/phonebase-skill-creator) agent skill.
 
 ## Contributing
 
